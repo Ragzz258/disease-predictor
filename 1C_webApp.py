@@ -99,7 +99,7 @@ def predict():
 
     put_html('<a href="/" style="font-size:30px;background-color:black;margin-left:380px;color:white">Return</a>') 
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-p", "--port", type=int, default=8080)
     args = parser.parse_args()
