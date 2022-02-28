@@ -7,10 +7,10 @@ from pywebio import start_server
 import pandas as pd
 import pickle
 
-sd = pd.read_csv('data\symptom_Description.csv')
-sp = pd.read_csv('data\symptom_precaution.csv')
+sd = pd.read_csv('symptom_Description.csv')
+sp = pd.read_csv('symptom_precaution.csv')
 
-with open('code\DecisionTree.pkl','rb') as f:
+with open('DecisionTree.pkl','rb') as f:
     mp  = pickle.load(f)
 
 app = Flask(__name__)
