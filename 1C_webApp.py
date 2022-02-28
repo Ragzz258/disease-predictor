@@ -1,11 +1,13 @@
-from select import select
-from flask import Flask
+from pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+from flask import Flask, send_from_directory
 from pywebio.input import *
 from pywebio.output import *
-from pywebio.output import put_text 
+import argparse
 from pywebio import start_server
 import pandas as pd
 import pickle
+import numpy as
 
 sd = pd.read_csv('symptom_Description.csv')
 sp = pd.read_csv('symptom_precaution.csv')
@@ -97,5 +99,9 @@ def predict():
 
     put_html('<a href="/" style="font-size:30px;background-color:black;margin-left:380px;color:white">Return</a>') 
 
-if __name__ == '__main__':
-    start_server(predict, port=8000, debug=True)
+if _name_ == '_main_':
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
+
+    start_server(predict, port=args.port)
