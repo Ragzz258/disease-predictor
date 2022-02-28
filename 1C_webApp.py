@@ -7,7 +7,7 @@ import argparse
 from pywebio import start_server
 import pandas as pd
 import pickle
-import numpy as
+import numpy as np
 
 sd = pd.read_csv('symptom_Description.csv')
 sp = pd.read_csv('symptom_precaution.csv')
